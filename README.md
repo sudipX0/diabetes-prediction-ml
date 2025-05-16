@@ -25,8 +25,8 @@ The project follows 12-Factor App principles, includes Docker support, automated
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/DiabetesPredictionML.git
-cd DiabetesPredictionML
+git clone https://github.com/sudipX0/diabetes-prediction-ml.git
+cd diabetes-prediction-ml
 
 # Create and activate a virtual environment
 python -m venv env
@@ -54,36 +54,6 @@ docker build -t diabetes-prediction-ml .
 # Run the container
 docker run -p 8000:8000 diabetes-prediction-ml
 ```
-
-## Project Structure
-
-```
-DiabetesPredictionML/
-├── .github/                      # GitHub Actions workflows
-│   └── workflows/
-│       └── ci-cd.yml                # CI pipeline configuration
-├── app/                          # Main application code
-│   ├── api/                      # API endpoints
-│   ├── core/                     # Core functionality
-│   ├── models/                   # ML model definitions
-│   └── main.py                   # FastAPI application entry point
-├── data/                         # Data directory
-│   ├── processed/                # Processed data
-│   └── raw/                      # Raw data
-├── docs/                         # Documentation files for MkDocs
-├── models/                       # Saved models
-├── notebooks/                    # Jupyter notebooks
-├── tests/                        # Test files
-├── .dockerignore                 # Docker ignore file
-├── .gitignore                    # Git ignore file
-├── Dockerfile                    # Docker configuration
-├── LICENSE                       # License file
-├── Makefile                      # Makefile for common commands
-├── README.md                     # This file
-├── mkdocs.yml                    # MkDocs configuration
-└── requirements.txt              # Python dependencies
-```
-
 ## API Documentation
 
 The API provides the following endpoints:
@@ -96,28 +66,17 @@ Example request to the prediction endpoint:
 curl -X POST "http://localhost:8000/predict" \
      -H "Content-Type: application/json" \
      -d '{
-           "age": 50,
-           "bmi": 32.1,
-           "glucose": 148,
-           "blood_pressure": 72,
-           "insulin": 0,
-           "skin_thickness": 35,
            "pregnancies": 0,
-           "diabetes_pedigree": 0.627
+           "glucose": 148,
+           "bmi": 32.1,
+           "diabetes_pedigree_function": 0.627,
+           "age": 50
          }'
+
 ```
 
 ## Development
 
-### Running Tests
-
-```bash
-# Run all tests
-pytest
-
-# Run tests with coverage report
-pytest --cov=app tests/
-```
 
 ### Documentation
 
@@ -129,9 +88,6 @@ mkdocs serve
 
 Visit http://localhost:8000 to view the documentation.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contributing
 
@@ -143,6 +99,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- Dataset source: [Original dataset attribution]
+- Dataset source: [PIMA INDIANS](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
 - Built with [FastAPI](https://fastapi.tiangolo.com/)
 - Project structure based on [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
