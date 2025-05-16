@@ -102,3 +102,6 @@ Visit http://localhost:8000 to view the documentation.
 - Dataset source: [PIMA INDIANS](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
 - Built with [FastAPI](https://fastapi.tiangolo.com/)
 - Project structure based on [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+
+## Author
+sudipX0
